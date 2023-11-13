@@ -18,24 +18,30 @@ function playRound(playerSelection, computerSelection) {
 
   let playerWon = 0;
 
-  if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-    playerWon = -1;
-  } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
-    playerWon = 0;
-  } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-    playerWon = 1;
-  } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-    playerWon = 1;
-  } else if (playerSelection === 'Paper' && computerSelection === 'Paper') {
-    playerWon = 0;
-  } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-    playerWon = -1;
-  } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-    playerWon = -1;
-  } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-    playerWon = 1;
-  } else if (playerSelection === 'Scissors' && computerSelection === 'Scissors') {
-    playerWon = 0;
+  if (playerSelection === 'Rock') {
+    if (computerSelection === 'Paper') {
+      playerWon = -1;
+    } else if (computerSelection === 'Rock') {
+      playerWon = 0;
+    } else if (computerSelection === 'Scissors') {
+      playerWon = 1;
+    }
+  } else if (playerSelection === 'Paper') {
+    if (computerSelection === 'Rock') {
+      playerWon = 1;
+    } else if (computerSelection === 'Paper') {
+      playerWon = 0;
+    } else if (computerSelection === 'Scissors') {
+      playerWon = -1;
+    }
+  } else if (playerSelection === 'Scissors') {
+    if (computerSelection === 'Rock') {
+      playerWon = -1;
+    } else if (computerSelection === 'Paper') {
+      playerWon = 1;
+    } else if (computerSelection === 'Scissors') {
+      playerWon = 0;
+    }
   }
 
   // console.log(playerWon);
